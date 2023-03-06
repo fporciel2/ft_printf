@@ -6,7 +6,7 @@
 #    By: fporciel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 13:39:47 by fporciel          #+#    #+#              #
-#    Updated: 2023/03/06 14:53:30 by fporciel         ###   ########.fr        #
+#    Updated: 2023/03/06 15:07:20 by fporciel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ $(OBJS): $(SRCS) $(HEADERS)
 
 clean:
 	rm -f $(OBJS)
+	rm -f *.o
 
 fclean: clean
 	rm -f $(NAME)
