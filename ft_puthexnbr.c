@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putaddress.c                                    :+:      :+:    :+:   */
+/*   ft_puthexnbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 12:13:35 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 13:35:19 by fporciel         ###   ########.fr       */
+/*   Created: 2023/03/06 13:18:05 by fporciel          #+#    #+#             */
+/*   Updated: 2023/03/06 13:34:51 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,27 @@ static char	*ft_reverse_hex_str(char *hex_string, int hex_len)
 	return (hex_string);
 }
 
+static int	ft_puthexaddress1(uintptr_t ap, int hex_len)
+{
+	int		remainder;
+	int		counter;
+	char	hex_string[hex_len];
+
+	counter = 0;
+	while (ap > 0)
+	{
+		remainder = ap % 16;
+		if (remainder < 10)
+			hex_string[counter] = remainder + 48;
+		else
+			hex_string[counter] = remainder - 10 + 65;
+		counter++;
+		ap = ap / 16;
+	}
+	hex_string = ft_reverse_hex_str(hex_string, hex_len);
+	return (ft_putstr(hex_string));
+}
+
 static int	ft_puthexaddress(uintptr_t ap, int hex_len)
 {
 	int		remainder;
@@ -53,22 +74,24 @@ static int	ft_puthexaddress(uintptr_t ap, int hex_len)
 	return (ft_putstr(hex_string));
 }
 
-int	ft_putaddress(uintptr_t ap)
+int	ft_puthexnbr(unsigned int ap, char formati)
 {
-	int	ap1;
-	int	hex_len;
-	int	remainder;
-	int	result;
+	unsigned int	ap1;
+	int				hex_len;
+	int				remainder;
+	int				result;
 
 	ap1 = ap;
 	hex_len = 0;
+	result = 0;
 	while (ap1 > 0)
 	{
 		ap1 = ap1 / 16;
 		hex_len++;
 	}
-	write(1, "0x", 2);
-	result = 2;
-	result = result + ft_puthexaddress(ap, hex_len);
+	if (formati == 'x')
+		result = result + ft_puthexaddress(ap, hex_len);
+	else if (formati == 'X')
+		result = result + ft_puthexaddress1(ap, hex_len);
 	return (result);
 }
