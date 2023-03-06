@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 11:59:08 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 12:04:34 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:09:45 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_putstr(char *ap)
 	if (ap == NULL)
 	{
 		write(1, "(null)", 6);
-		return (result);
+		return (6);
 	}
 	while (ap[result])
 		result++;

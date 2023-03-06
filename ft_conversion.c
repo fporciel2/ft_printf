@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 11:08:13 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 12:13:04 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/06 16:07:29 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	ft_conversion(const char *format, int *i, va_list ap)
 		result = result + ft_putunbr(va_arg(ap, unsigned int));
 	else if ((format[(*i)] == 'x') || (format[(*i)] == 'X'))
 		result = result + ft_puthexnbr(va_arg(ap, unsigned int), format[(*i)]);
+	(*i)++;
 	return (result);
 }
