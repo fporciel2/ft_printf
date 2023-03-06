@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 09:48:08 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 12:13:23 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:06:33 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	ft_putaddress(uintptr_t ap);
 int	ft_putnbr(int ap);
 int	ft_putunbr(unsigned int ap);
 int	ft_puthexnbr(unsigned int ap, char formati);
+int	ft_uputnbr_fd(unsigned int n, int fd);
 
 #endif
