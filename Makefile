@@ -6,15 +6,15 @@
 #    By: fporciel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 13:39:47 by fporciel          #+#    #+#              #
-#    Updated: 2023/03/06 13:48:40 by fporciel         ###   ########.fr        #
+#    Updated: 2023/03/06 14:02:27 by fporciel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
 .DEFAULT_GOAL := $(NAME)
 NAME := libftprintf.a
-SRCS := $(wildcard ft_*.c/ft_*.c)
-HEADERS := $(wildcard libft*.h/libft*.h)
+SRCS := $(shell find . -type f -name "ft_*.c")
+HEADERS := $(shell find . -type f -name "libft*.h")
 OBJS := $(patsubst %.c, %.o, $(SRCS))
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror -c
