@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:13:35 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 13:35:19 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/06 15:03:31 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ static int	ft_puthexaddress(uintptr_t ap, int hex_len)
 {
 	int		remainder;
 	int		counter;
+	char	*hexstr;
 	char	hex_string[hex_len];
 
 	counter = 0;
@@ -49,7 +50,8 @@ static int	ft_puthexaddress(uintptr_t ap, int hex_len)
 		counter++;
 		ap = ap / 16;
 	}
-	hex_string = ft_reverse_hex_str(hex_string, hex_len);
+	hexstr = &(hex_string[0]);
+	hexstr = ft_reverse_hex_str(hexstr, hex_len);
 	return (ft_putstr(hex_string));
 }
 
@@ -57,7 +59,6 @@ int	ft_putaddress(uintptr_t ap)
 {
 	int	ap1;
 	int	hex_len;
-	int	remainder;
 	int	result;
 
 	ap1 = ap;

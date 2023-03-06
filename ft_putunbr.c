@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:08:49 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 13:14:47 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/06 15:04:17 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putunbr(unsigned int ap)
 	int				result;
 
 	ap1 = ap;
-	if (ap = 0)
+	if (ap == 0)
 		result = 1;
 	else
 		result = 0;
