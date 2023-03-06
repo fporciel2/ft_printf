@@ -6,14 +6,17 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 09:50:38 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 10:15:08 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/06 10:53:12 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	ft_printf2(const char *format, int result, int *i)
+static int	ft_printf2(const char *format, int *i)
 {
+	int	result;
+
+	result = 0;
 	(*i)++;
 	if (format[(*i)] == 37)
 	{
@@ -40,7 +43,7 @@ static int	ft_printf1(const char *format, va_list ap, int result)
 		else if (ft_is_format_spec(format, i) == 0)
 			i++;
 		else if (ft_is_format_spec(format, i) == 1)
-			result = result + ft_printf2(format, result, &i);
+			result = result + ft_printf2(format, &i);
 		else if (ft_is_format_spec(format, i) == 2)
 			result = result + ft_conversion(format, &i, ap);
 	}
