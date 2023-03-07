@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:18:05 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/07 12:05:39 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:24:32 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,26 +37,22 @@ static int	ft_puthexaddress1(unsigned int ap, int hex_len)
 	int		remainder;
 	int		counter;
 	char	*hexstr;
-	int		result;
+	char	hex_string[20];
 
-	hexstr = (char *)malloc(sizeof(char) * hex_len);
-	if (hexstr == NULL)
-		return (0);
 	counter = 0;
 	while (ap > 0)
 	{
 		remainder = ap % 16;
 		if (remainder < 10)
-			hexstr[counter] = remainder + 48;
+			hex_string[counter] = remainder + 48;
 		else
-			hexstr[counter] = remainder - 10 + 65;
+			hex_string[counter] = remainder - 10 + 65;
 		counter++;
 		ap = ap / 16;
 	}
+	hexstr = &(hex_string[0]);
 	hexstr = ft_reverse_hex_str(hexstr, hex_len);
-	result = ft_putstr(hexstr);
-	free(hexstr);
-	return (result);
+	return (ft_putstr(hexstr));
 }
 
 static int	ft_puthexaddress(unsigned int ap, int hex_len)
@@ -64,26 +60,22 @@ static int	ft_puthexaddress(unsigned int ap, int hex_len)
 	int		remainder;
 	int		counter;
 	char	*hexstr;
-	int		result;
+	char	hex_string[20];
 
-	hexstr = (char *)malloc(sizeof(char) * hex_len);
-	if (hexstr == NULL)
-		return (0);
 	counter = 0;
 	while (ap > 0)
 	{
 		remainder = ap % 16;
 		if (remainder < 10)
-			hexstr[counter] = remainder + 48;
+			hex_string[counter] = remainder + 48;
 		else
-			hexstr[counter] = remainder - 10 + 97;
+			hex_string[counter] = remainder - 10 + 97;
 		counter++;
 		ap = ap / 16;
 	}
+	hexstr = &(hex_string[0]);
 	hexstr = ft_reverse_hex_str(hexstr, hex_len);
-	result = ft_putstr(hexstr);
-	free(hexstr);
-	return (result);
+	return (ft_putstr(hexstr));
 }
 
 int	ft_puthexnbr(unsigned int ap, char formati)
