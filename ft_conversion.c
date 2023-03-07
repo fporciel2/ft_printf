@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 11:08:13 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 16:07:29 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 09:28:39 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_conversion(const char *format, int *i, va_list ap)
 	else if (format[(*i)] == 's')
 		result = result + ft_putstr(va_arg(ap, char *));
 	else if (format[(*i)] == 'p')
-		result = result + ft_putaddress(va_arg(ap, uintptr_t));
+		result = result + ft_putaddress(va_arg(ap, int));
 	else if ((format[(*i)] == 'd') || (format[(*i)] == 'i'))
 		result = result + ft_putnbr(va_arg(ap, int));
 	else if (format[(*i)] == 'u')

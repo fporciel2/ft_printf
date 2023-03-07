@@ -6,33 +6,13 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:13:35 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 15:03:31 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 09:40:23 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static char	*ft_reverse_hex_str(char *hex_string, int hex_len)
-{
-	int		i;
-	int 	j;
-	char	buff;
-
-	i = 0;
-	j = hex_len - 1;
-	while (i < j)
-	{
-		buff = hex_string[i];
-		hex_string[i] = hex_string[j];
-		hex_string[j] = buff;
-		i++;
-		j--;
-	}
-	hex_string[hex_len] = 0;
-	return (hex_string);
-}
-
-static int	ft_puthexaddress(uintptr_t ap, int hex_len)
+static int	ft_puthexaddress(int ap, int hex_len)
 {
 	int		remainder;
 	int		counter;
@@ -51,11 +31,10 @@ static int	ft_puthexaddress(uintptr_t ap, int hex_len)
 		ap = ap / 16;
 	}
 	hexstr = &(hex_string[0]);
-	hexstr = ft_reverse_hex_str(hexstr, hex_len);
-	return (ft_putstr(hex_string));
+	return (ft_putstr(hexstr));
 }
 
-int	ft_putaddress(uintptr_t ap)
+int	ft_putaddress(int ap)
 {
 	int	ap1;
 	int	hex_len;
