@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:18:05 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/07 11:51:51 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:02:01 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	ft_puthexaddress1(unsigned int ap, int hex_len)
 	}
 	hexstr = ft_reverse_hex_str(hexstr, hex_len);
 	result = ft_putstr(hexstr);
-	ft_free_substrings(hexstr);
+	free(hexstr);
 	return (result);
 }
 
@@ -82,7 +82,7 @@ static int	ft_puthexaddress(unsigned int ap, int hex_len)
 	}
 	hexstr = ft_reverse_hex_str(hexstr, hex_len);
 	result = ft_substr(hexstr);
-	ft_free_substrings(hexstr);
+	free(hexstr);
 	return (result);
 }
 

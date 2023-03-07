@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 10:53:00 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/07 11:57:21 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:02:27 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,5 @@ int		ft_putnbr(int ap);
 int		ft_putunbr(unsigned int ap);
 int		ft_puthexnbr(unsigned int ap, char formati);
 void	ft_uputnbr_fd(unsigned int n, int fd);
-void	ft_free_substrings(char *substring);
 
 #endif
