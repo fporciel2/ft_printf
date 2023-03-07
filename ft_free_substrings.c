@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_format_spec.c                                :+:      :+:    :+:   */
+/*   ft_free_substrings.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 10:19:23 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/07 11:13:56 by fporciel         ###   ########.fr       */
+/*   Created: 2023/03/07 11:52:44 by fporciel          #+#    #+#             */
+/*   Updated: 2023/03/07 11:56:44 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_is_format_spec(const char *format, int i)
+void	ft_free_substrings(char *substring)
 {
-	i++;
-	if (format[i] == 37)
-		return (1);
-	else if ((format[i] == 'c') || (format[i] == 's') || (format[i] == 'p')
-		|| (format[i] == 'd') || (format[i] == 'i')
-		|| (format[i] == 'u')
-		|| (format[i] == 'x') || (format[i] == 'X'))
-		return (2);
-	else
-		return (0);
+	size_t	subslen;
+
+	subslen = ft_strlen(substring);
+	while (subslen-- > 0)
+		free(substring[subslen]);
+	free(*substring);
+	free(substring);
 }

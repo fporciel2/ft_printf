@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:18:05 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/07 10:57:12 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:51:51 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static char	*ft_reverse_hex_str(char *hex_string, int hex_len)
 {
 	int		i;
-	int 	j;
+	int		j;
 	char	buff;
 
 	i = 0;
@@ -32,50 +32,58 @@ static char	*ft_reverse_hex_str(char *hex_string, int hex_len)
 	return (hex_string);
 }
 
-static int	ft_puthexaddress1(uintptr_t ap, int hex_len)
+static int	ft_puthexaddress1(unsigned int ap, int hex_len)
 {
 	int		remainder;
 	int		counter;
 	char	*hexstr;
-	char	hex_string[hex_len];
+	int		result;
 
+	hexstr = (char *)malloc(sizeof(char) * hex_len);
+	if (hexstr == NULL)
+		return (0);
 	counter = 0;
 	while (ap > 0)
 	{
 		remainder = ap % 16;
 		if (remainder < 10)
-			hex_string[counter] = remainder + 48;
+			hexstr[counter] = remainder + 48;
 		else
-			hex_string[counter] = remainder - 10 + 65;
+			hexstr[counter] = remainder - 10 + 65;
 		counter++;
 		ap = ap / 16;
 	}
-	hexstr = &(hex_string[0]);
 	hexstr = ft_reverse_hex_str(hexstr, hex_len);
-	return (ft_putstr(hex_string));
+	result = ft_putstr(hexstr);
+	ft_free_substrings(hexstr);
+	return (result);
 }
 
-static int	ft_puthexaddress(uintptr_t ap, int hex_len)
+static int	ft_puthexaddress(unsigned int ap, int hex_len)
 {
 	int		remainder;
 	int		counter;
 	char	*hexstr;
-	char	hex_string[hex_len];
+	int		result;
 
+	hexstr = (char *)malloc(sizeof(char) * hex_len);
+	if (hexstr == NULL)
+		return (0);
 	counter = 0;
 	while (ap > 0)
 	{
 		remainder = ap % 16;
 		if (remainder < 10)
-			hex_string[counter] = remainder + 48;
+			hexstr[counter] = remainder + 48;
 		else
-			hex_string[counter] = remainder - 10 + 97;
+			hexstr[counter] = remainder - 10 + 97;
 		counter++;
 		ap = ap / 16;
 	}
-	hexstr = &(hex_string[0]);
 	hexstr = ft_reverse_hex_str(hexstr, hex_len);
-	return (ft_putstr(hex_string));
+	result = ft_substr(hexstr);
+	ft_free_substrings(hexstr);
+	return (result);
 }
 
 int	ft_puthexnbr(unsigned int ap, char formati)
