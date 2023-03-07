@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:13:35 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/07 10:00:25 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:18:52 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static char	*ft_reverse_hex_str(char *hex_string, int hex_len)
 	return (hex_string);
 }
 
-static int	ft_puthexaddress(long long ap, int hex_len)
+static int	ft_puthexaddress(unsigned long long ap, int hex_len)
 {
 	int		remainder;
 	int		counter;
@@ -55,11 +55,11 @@ static int	ft_puthexaddress(long long ap, int hex_len)
 	return (ft_putstr(hexstr));
 }
 
-int	ft_putaddress(long long ap)
+int	ft_putaddress(unsigned long long ap)
 {
-	long long	ap1;
-	int			hex_len;
-	int			result;
+	unsigned long long	ap1;
+	int					hex_len;
+	int					result;
 
 	if (ap == 0)
 	{
