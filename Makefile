@@ -6,7 +6,7 @@
 #    By: fporciel <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/06 13:39:47 by fporciel          #+#    #+#              #
-#    Updated: 2023/03/06 15:57:59 by fporciel         ###   ########.fr        #
+#    Updated: 2023/03/07 11:01:29 by fporciel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 .DEFAULT_GOAL := $(NAME)
 NAME := libftprintf.a
 SRCS := $(wildcard ft_*.c) $(wildcard **/ft_*.c)
-HEADERS := $(wildcard libft*.h) $(wildcard **/libft*.h)
+HEADERS := $(wildcard *.h) $(wildcard **/*.h)
 OBJS := $(patsubst %.c, %.o, $(notdir $(SRCS)))
 CC := gcc
 CFLAGS := -Wall -Wextra -Werror -c

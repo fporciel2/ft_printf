@@ -6,11 +6,11 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 09:50:38 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 16:38:39 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:55:47 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 static int	ft_printf2(const char *format, int *i)
 {

@@ -6,11 +6,11 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:51:56 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/07 10:26:46 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:59:40 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr(int ap)
 {

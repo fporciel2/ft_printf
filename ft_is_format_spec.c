@@ -6,11 +6,11 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 10:19:23 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 10:25:29 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:55:26 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_is_format_spec(const char *format, int i)
 {

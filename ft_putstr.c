@@ -6,11 +6,11 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 11:59:08 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 16:09:45 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 11:00:04 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *ap)
 {
