@@ -6,13 +6,33 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 12:13:35 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/07 09:40:23 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:00:25 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	ft_puthexaddress(int ap, int hex_len)
+static char	*ft_reverse_hex_str(char *hex_string, int hex_len)
+{
+	int		i;
+	int 	j;
+	char	buff;
+
+	i = 0;
+	j = hex_len - 1;
+	while (i < j)
+	{
+		buff = hex_string[i];
+		hex_string[i] = hex_string[j];
+		hex_string[j] = buff;
+		i++;
+		j--;
+	}
+	hex_string[hex_len] = 0;
+	return (hex_string);
+}
+
+static int	ft_puthexaddress(long long ap, int hex_len)
 {
 	int		remainder;
 	int		counter;
@@ -31,15 +51,21 @@ static int	ft_puthexaddress(int ap, int hex_len)
 		ap = ap / 16;
 	}
 	hexstr = &(hex_string[0]);
+	hexstr = ft_reverse_hex_str(hexstr, hex_len);
 	return (ft_putstr(hexstr));
 }
 
-int	ft_putaddress(int ap)
+int	ft_putaddress(long long ap)
 {
-	int	ap1;
-	int	hex_len;
-	int	result;
+	long long	ap1;
+	int			hex_len;
+	int			result;
 
+	if (ap == 0)
+	{
+		write(1, "0x0", 3);
+		return (3);
+	}
 	ap1 = ap;
 	hex_len = 0;
 	while (ap1 > 0)

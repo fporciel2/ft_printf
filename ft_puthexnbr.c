@@ -6,7 +6,7 @@
 /*   By: fporciel <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 13:18:05 by fporciel          #+#    #+#             */
-/*   Updated: 2023/03/06 15:10:55 by fporciel         ###   ########.fr       */
+/*   Updated: 2023/03/07 10:01:31 by fporciel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,11 @@ int	ft_puthexnbr(unsigned int ap, char formati)
 	int				hex_len;
 	int				result;
 
+	if (ap == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
 	ap1 = ap;
 	hex_len = 0;
 	result = 0;
